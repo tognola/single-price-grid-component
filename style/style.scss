@@ -1,0 +1,118 @@
+$cyan: hsl(179, 62%, 43%);
+$bright-yellow: hsl(71, 73%, 54%);
+
+$light-gray: hsl(204, 43%, 93%);
+$grayish-blue: hsl(218, 22%, 67%);
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Karla', sans-serif;
+    background-color: $light-gray;
+}
+
+main {
+    margin: 3em 2em;
+    section{
+        padding: 2em 1.5em;
+
+        &:nth-child(1){
+            background-color: white;
+            h2{
+                color: $cyan;
+                margin-bottom: 1em;
+            }
+            h3{
+                color: $bright-yellow;
+                margin-bottom: 1em;
+            }
+
+            p{
+                color: rgba(0,0,0,0.5);
+                line-height: 1.5em;
+            }
+        }
+
+        &:nth-child(2){
+            background-color: $cyan;
+
+            h2{
+                color: white;
+                margin-bottom: 1em;
+            }
+
+            div{
+                display: flex;
+                align-items: center;
+                color: white;
+                margin-bottom: 0.5em;
+                .price{
+                    font-size: 2em;
+                    font-weight: 700;
+                }
+
+                .period{
+                    display: inline-block;
+                    margin-left: 1em;
+                    color: $light-gray;
+                }
+            }
+
+            p{
+                color:white;
+                margin-bottom: 2em;
+            }
+            button{
+                padding: 0.8em 0;
+                background-color: $bright-yellow;
+                width: 100%;
+                color: white;
+                font-weight: 700;
+                font-size: 0.9em;
+                border: 0px;
+                border-radius: 0.3em;
+                box-shadow: rgba(0,0,0,0.3) 0 0 5px ;
+            }
+        }
+
+        &:nth-child(3){
+            background-color: $cyan;
+            filter: opacity(0.8);
+            color: white;
+
+            h2{
+                margin-bottom: 1em;
+            }
+            p{
+                font-size: 0.8em;
+                line-height: 1.5em;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    main{
+        max-width: 50%;
+        display: grid;
+        grid-template: 3fr 4fr /repeat(2,1fr);
+
+        section{
+            &:nth-child(1){
+                grid-area: 1/1/2/3;
+            }
+        }
+    }
+}
